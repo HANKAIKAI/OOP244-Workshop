@@ -60,15 +60,17 @@ namespace sdds{
         }
     }
 
-    /*Adds aGuest to the dynamically allocated list of guests in theGuestList
-      將aGuest添加到GuestList中動態分配的客人列表中*/
     void addGuest(GuestList& theGuestList, const Guest& aGuest) {
-        Guest* temp = new Guest[theGuestList.m_noOfGuests + 1];
-        if (temp != nullptr){
+
+        Guest* temp = nullptr;
+        temp =  new Guest[theGuestList.m_noOfGuests + 1];
+        if (temp != nullptr) {
             for (int i = 0; i < theGuestList.m_noOfGuests; i++){
                 strcpy(temp[i].m_name, theGuestList.m_gst[i].m_name);
                 temp[i].m_phno = theGuestList.m_gst[i].m_phno;
             }
+            strcpy(temp[theGuestList.m_noOfGuests].m_name, aGuest.m_name);
+            temp[theGuestList.m_noOfGuests].m_phno = aGuest.m_phno;
             delete[] theGuestList.m_gst;
             theGuestList.m_gst = temp;
             theGuestList.m_noOfGuests += 1;
