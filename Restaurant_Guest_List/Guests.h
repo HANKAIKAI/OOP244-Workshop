@@ -10,6 +10,7 @@
 //==============================================
 #ifndef SDDS_GUESTS_H
 #define SDDS_GUESTS_H
+#include <string.h>
 namespace sdds{
 
     struct PhoneNumber{
