@@ -41,20 +41,13 @@ namespace sdds{
         cout << "(" << thePhoneNumber.m_areacode << ")" << " " << thePhoneNumber.m_number << endl;
     }
 
-    /*Prints the guest information as follows:
-        name
-        comma and space ", "
-        phone number*/
     void print(const Guest& theGuest) {
-        //cout << theGuest.m_name << ", " << theGuest.m_phno;
         cout << theGuest.m_name << ", ";
         print(theGuest.m_phno);
     }
 
-    /*Prints all the guests in a list. It also adds a row number with a dash before each name.*/
     void print(const GuestList& theGuestList) {
         for (int i = 0; i < theGuestList.m_noOfGuests; i++){
-            //cout << (i + 1) << "- " << theGuestList.m_gst[i];
             cout << i + 1 << "- ";
             print(theGuestList.m_gst[i]);
         }
