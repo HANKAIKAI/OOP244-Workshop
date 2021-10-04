@@ -59,7 +59,7 @@ namespace sdds{
         temp = new Guest[theGuestList.m_noOfGuests + 1];
         if (temp != nullptr) {
             for (int i = 0; i < theGuestList.m_noOfGuests; i++) {
-                strcpy(temp[i].m_name, theGuestList.m_gst[i].m_name);
+                strcpy(temp[i].m_name, theGuestList.m_gst[i].m_name);  // strcpy(dest, src);
                 temp[i].m_phno = theGuestList.m_gst[i].m_phno;
             }
             strcpy(temp[theGuestList.m_noOfGuests].m_name, aGuest.m_name);

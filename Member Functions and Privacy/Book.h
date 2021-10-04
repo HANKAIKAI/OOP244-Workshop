@@ -11,18 +11,18 @@
 #ifndef SDDS_BOOK_H
 #define SDDS_BOOK_H
 namespace sdds{
-	const double PENALTY = 1.5; // Penalty in dollars for each day a book's return is overdue
-	const int MAXLOAN = 15; // Maximum number of days to loan a book witout penalty.
+	const double PENALTY = 1.5; 
+	const int MAXLOAN = 15; 
 
 	class Book{
 	private:
-		char m_title[51];  // an array of 51 characters to hold a Cstring of a maximum of 50 characters
-		int m_SKU;         // Stock Keeping Unit number
-		double m_daysOnLoan;
+		char m_title[51];  
+		int m_SKU;         
+		int m_daysOnLoan;
 		void setEmpty();
 		double penalty() const;
 	public:
-		void set(const char* title, int SKU, double daysOnLoan);
+		void set(const char* title, int SKU, int daysOnLoan);
 		bool isEmpty() const;
 		bool hasPenalty() const;
 		bool subTitle(const char* title);

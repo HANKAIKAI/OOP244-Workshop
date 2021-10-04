@@ -25,6 +25,10 @@ int noOfRecs(FILE* fptr);
 void readBooks(Library& L, FILE* fptr);
 int main() {
     FILE* fptr = fopen("books.csv", "r");
+    /*if (fptr == nullptr)
+    {
+        cout << "error";
+    }*/
     Library b[4];
     Library L;
     int i;

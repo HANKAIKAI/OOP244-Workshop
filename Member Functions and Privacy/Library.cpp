@@ -24,17 +24,17 @@ namespace sdds{
 	}
 
 	bool Library::isEmpty() const {
-		return (m_book == nullptr || m_name[0] == 0) ;
+		return (m_book == nullptr || m_name[0] == '\0') ;
 	}
 
 	void Library::header(const char* title) const {
-		for (int i = 0; i <= 78; i++){
+		for (int i = 0; i < 78; i++){
 			cout << '-';
 		}
 		cout << endl;
-		cout << "***** " << m_name << " *****" << endl;
-		cout << *title << endl;
-		for (int i = 0; i <= 78; i++) {
+		cout << "*****  " << m_name << "  *****" << endl;
+		cout << title << endl;
+		for (int i = 0; i < 78; i++) {
 			cout << '-';
 		}
 		cout << endl;
@@ -43,37 +43,32 @@ namespace sdds{
 	}
 
 	void Library::footer() const {
-		for (int i = 0; i <= 78; i++) {
+		for (int i = 0; i < 78; i++) {
 			cout << '-';
 		}
 		cout << endl;
 	}
 
 	void Library::initialize(const char* name, int noOfBooks) {
-		if (name != nullptr && noOfBooks > 0) {
+		if (name != nullptr && name[0] != '\0' && noOfBooks > 0) {
 			strcpy(m_name, name);
 			m_sizeOfBooksArray = noOfBooks;
-			
-			// allocate a dynamic array of Books to the noOfBooks. 
 			m_book = new Book[noOfBooks];
-			// if the allocation fails it will set the Library into a safe empty state
-			for (int i = 0; i < noOfBooks; i++){
-				m_book[i].setEmpty();
-				setEmpty();
-			}
+			
 			m_addedBooks = 0;
 
 		}else{
 			setEmpty();
 		}
 	}
+	
 
 	bool Library::addBook(const char* book_title, int sku, int loanDays) {
 		bool resp = false;
-		if (m_addedBooks <= m_sizeOfBooksArray){
-			m_book->set(book_title, sku, loanDays);
+		if (m_addedBooks < m_sizeOfBooksArray){
+			m_book[m_addedBooks].set(book_title, sku, loanDays);
 		}
-		if (!m_book->isEmpty()){
+		if (!m_book[m_addedBooks].isEmpty()) {
 			m_addedBooks++;
 			resp = true;
 		}
@@ -85,18 +80,54 @@ namespace sdds{
 		m_book = nullptr;
 	}
 
-	void Library::display(const char* substr) {
-		int rowNum = 1;
+	
+
+	void Library::display(bool overdueOnly) const {
 		
+		int rowNum = 1;
+		if (!isEmpty()){
+			if (overdueOnly){
+				header("Overdue Books");
+				for (int i = 0; i < m_addedBooks; i++){
+					if (m_book[i].hasPenalty()){
+						cout.width(4);
+						cout.setf(ios::left);
+						cout << rowNum;
+						rowNum++;
+						m_book[i].display();
+					}
+
+				}
+			}else{
+				header("Books on Loan");
+				for (int i = 0; i < m_addedBooks; i++) {
+					cout.width(4);
+					cout.setf(ios::left);
+					cout << rowNum;
+					rowNum++;
+					m_book[i].display();	
+				}
+			}
+			footer();
+			
+		}else{
+			cout << "Invalid Library" << endl;
+		}
+	}
+
+	void Library::display(const char* substr) {
+		
+		int rowNum = 1;
+
 		// if the Library is not in a safe empty state
-		if (!isEmpty()){     
+		if (!isEmpty()) {
 			cout << ">>> Searching for: \"";
 			cout << substr;
 			cout << "\" <<<" << endl;
 			header("Substring search");
 			int flag = 0;
-			for (int i = 0; i < m_addedBooks && flag == 0; i++){
-				if (m_book[i].subTitle(substr)){
+			for (int i = 0; i < m_addedBooks; i++) {
+				if (m_book[i].subTitle(substr)) {
 					cout.width(4);
 					cout.setf(ios::left);
 					cout << rowNum;
@@ -105,32 +136,13 @@ namespace sdds{
 					flag = 1;
 				}
 			}
-			if (flag){
+			footer();
+			if (!flag) {
 				cout << "No book title contains \"" << substr << "\"" << endl;
 				footer();
 			}
-		}else{
-			cout << "Invalid Library" << endl;
 		}
-	}
-
-	void Library::display(bool overdueOnly) const {
-		int rowNum = 1;
-		if (!isEmpty()){
-			if (overdueOnly){
-				header("Overdue Books");
-				for (int i = 0; i < m_addedBooks; i++){
-					cout.width(4);
-					cout.setf(ios::left);
-					cout << rowNum;
-					rowNum++;
-					m_book[i].display();
-				}
-			}else{
-				header("Books on Loan");
-			}
-			
-		}else{
+		else {
 			cout << "Invalid Library" << endl;
 		}
 	}

@@ -11,6 +11,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 #include "Book.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ namespace sdds{
 	void Book::setEmpty() {
 		m_title[0] = '\0';
 		m_SKU = 0;
-		m_daysOnLoan = 0.0;
+		m_daysOnLoan = 0;
 	}
 
 	double Book::penalty() const {
@@ -27,8 +28,9 @@ namespace sdds{
 		return  overDueDay;
 	}
 
-	void Book::set(const char* title, int SKU, double daysOnLoan) {
-		if (title != nullptr && SKU > 0 && daysOnLoan > 0) {
+	void Book::set(const char* title, int SKU, int daysOnLoan) {
+		
+		if (title != nullptr && title[0] != '\0' && SKU > 0 && daysOnLoan > 0) {
 			strcpy(m_title, title);
 			m_SKU = SKU;
 			m_daysOnLoan = daysOnLoan;
@@ -39,7 +41,7 @@ namespace sdds{
 	}
 
 	bool Book::isEmpty() const {
-		return (m_title[0] == '0');
+		return (m_title[0] == '\0');
 	}
 
 	bool Book::hasPenalty() const {
@@ -47,22 +49,29 @@ namespace sdds{
 	}
 
 	bool Book::subTitle(const char* title) {
-		return strstr(title, "Wond") ? true : false;
+		return strstr(m_title, title) ? true : false;
 	}
 
 	void Book::display() const{
 		if (!isEmpty()){
-			cout.width(49);
+			/*cout.width(49);
 			cout.setf(ios::left);
-			cout << m_title;
-			cout.width(8);
+			cout << m_title;*/
+			printf("%-49s", m_title);
+
+			/*cout.width(8);
 			cout.setf(ios::left);
-			cout << m_daysOnLoan;
+			cout << m_SKU;*/
+			printf("%-8d", m_SKU);
+
+			/*cout.width(10);
+			cout.setf(ios::left);
+			cout << m_daysOnLoan;*/
+			printf("%-10d", m_daysOnLoan);
 			if (hasPenalty()){
-				cout.width(7);
-				cout.setf(ios::right);
-				cout.precision(2);
-				cout << penalty();
+				
+				/*cout << right << setw(7) << fixed << setprecision(2) << penalty();*/
+				printf("%7.2lf", penalty());
 			}
 			cout << endl;
 			

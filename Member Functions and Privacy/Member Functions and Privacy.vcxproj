@@ -147,9 +147,6 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="Library.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\LAB\books.csv" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

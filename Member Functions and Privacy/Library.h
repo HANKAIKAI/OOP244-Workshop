@@ -15,7 +15,7 @@ namespace sdds{
 	class Library{
 	private:
 		char m_name[31];
-		Book* m_book;
+		Book* m_book;       // A Book pointer to hold a dynamic array of Book objects
 		int m_sizeOfBooksArray; // An integer to hold the size of the dynamic array of books
 		int m_addedBooks; // An integer to keep track of the number of books that are set to valid values in the books array.
 		void setEmpty();
@@ -26,9 +26,9 @@ namespace sdds{
 		void initialize(const char* name, int noOfBooks);
 		bool addBook(const char* book_title, int sku, int loanDays);
 		void clear();
-		void display(const char* substr);
 		void display(bool overdueOnly = false) const;
-
+		void display(const char* substr);
+		
 	};
 
 }
