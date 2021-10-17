@@ -1,0 +1,12 @@
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.10.15
+//==============================================
+// Worshop#5: (DIY) Member and Helper operators
+// Version: 0.9
+//==============================================
+
+Through this workshop, I can overload various operators in C++. An important point in overloading an operator is to clearly know what type of variable will come to the left of the operator, and it is also important to identify which type of variable will work with. The left operator becomes the current object. The most interesting thing for me was the type conversion. The reason is that I only knew how to temporarily change the type of variable by using casting, but I have never thought I could get the value which I wanted by overloading the type at all. The important thing while overloading type conversion is that it should be made into a function of const type. This is because the value of the current object should not be changed. There is a function that helps the class outside the class, not the member operator. This is called the Helper function. Helper functions are usually functions that wrap some useful functionality that I am going to reuse, most likely over and over again. I can create helper functions meant to be used for many different kinds of purposes.
