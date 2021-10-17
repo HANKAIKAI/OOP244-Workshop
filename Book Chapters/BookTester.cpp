@@ -1,12 +1,3 @@
-// Workshop #4:
-// Version: 0.9
-// Date: 2021/05/01
-// Author: Nargis Khan
-// Description:
-// This file tests the DIY section of your workshop
-// Revision: Fardad Soleimanloo
-// Date: 2021/10/01
-///////////////////////////////////////////////////
 #include<iostream>
 #include<cstring>
 #include"Chapter.h"
@@ -15,7 +6,7 @@ using namespace std;
 using namespace sdds;
 
 void displayBooks(const Book* b, int num);
-void DMAtest(Book& B);
+//void DMAtest(Book& B);
 int main() {
 
     Chapter cp1[] = {
@@ -65,26 +56,26 @@ int main() {
 
     cout << "Displaying invalid Book objects" << endl;
     cout << "-------------------------------------------------------" << endl;
-    displayBooks(bo, 5);
+    //displayBooks(bo, 5);
     cout << "Displaying valid Book object with valid chapters" << endl;
     cout << "-------------------------------------------------------" << endl;
-    displayBooks(&bo[6], 1);
+    //displayBooks(&bo[6], 1);
     cout << "Adding a new Chapter to the Book" << endl;
     cout << "-------------------------------------------------------" << endl;
     bo[6].addChapter("Python", 100);
     bo[6].display();
-    cout << "-------------------------------------------------------" << endl;
+    /*cout << "-------------------------------------------------------" << endl;
     cout << "Testing DMA" << endl;
     cout << "-------------------------------------------------------" << endl;
     cout << "Press enter to continue: ";
     cin.ignore();
-    DMAtest(bo[6]);
+    DMAtest(bo[6]);*/
     return 0;
 }
-void DMAtest(Book& B) {
-    for (int i = 0; i < 2000; i++) B.addChapter("testing", i % 202);
-    B.display();
-}
+//void DMAtest(Book& B) {
+//    for (int i = 0; i < 2000; i++) B.addChapter("testing", i % 202);
+//    B.display();
+//}
 void displayBooks(const Book* b, int num) {
     int i;
     for (i = 0; i < num; i++) {
