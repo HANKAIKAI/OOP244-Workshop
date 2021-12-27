@@ -1,0 +1,21 @@
+//Name:YuanKai Han
+//ID: 154477194
+//Email: yhan77@myseneca.ca
+// Date: 2021.12.1
+/*-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------*/
+The first template function is "bool check(T arr[], int index, T2 key)". It will Call "==" operator corresponding to each type. If the element of an array match the key, returns true. This function is invoked in search function. 
+
+The second implementation of the template function is "bool search(T arr[], int size_arr, T2 key, Collection<T>& collection). 
+First of all, the array use collection type name called T. Secondly, it receives an integer variable. It represents the number of elements in the array of objects. The key value is different type of from class to class. Therefore, I use another type name called T2.
+Finally, Collection is a template class. The Collection template class receives a Car or Student or Employee class as a type. In this function, first, I set a boolean to control if the function is match or not. Secondly, I used a for loop to compare every element is match the key or not and invoked the check function in the if condition.
+If the element in the array matchs the key value, call the template function "add" in the Collection class to add the data.
+
+The third template function is "void listArrayElements(const char* title_List,const T arr[], int size_arr)".
+In order to use this template function, main.cpp handed it over to the format "listArrayElements("All the cars:", C, 7);". This function receives various types of arrays, titles, and number of arrays, and outputs them to the console. I can enter various types of arrays using <typename T> rather than one type of array. 
+
+The finaly template function is "bool sizeCheck(Collection<T>& collection1, Collection<T>& collection2)". This sizeCheck function will compares the sizes of the two collections.
+
+In conclusion, using templates has the advantage of being able to use various types freely in functions or classes. 

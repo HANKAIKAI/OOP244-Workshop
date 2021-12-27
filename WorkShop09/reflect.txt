@@ -1,0 +1,21 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.11.24
+//==============================================
+// Worshop#9: (LAB) Derived Classes and Resources
+// Version: 0.9
+//==============================================
+
+In this workshop, I practice the skill of virtual functions in inheritance and I/O.
+
+First of all, I need to walk through the Person class using the nameTester.cpp program understood how it works. I created a class module called Contact, derived from the Person class. 
+
+I created some function belong to Contact, override all the virtual functions and virtual operators of the Person class. Also, I implement the rule of three.
+
+Secondly, I use the Utils function for my C-string, such as strCpy() and dynamic memory allocation, such as delAlloCopy(). 
+
+I did not feel much difficulty during the last milestone. However, the key point of this milestone was to properly understand the functions and classes I had implemented before and to understand the inheritance relationship between the classes. 

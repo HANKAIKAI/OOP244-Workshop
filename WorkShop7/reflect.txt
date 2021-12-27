@@ -1,0 +1,11 @@
+/*
+Name: YUANKAI HAN
+Email: yhan77@myseneca.ca
+Student ID: 154477194
+Data: 2021/11/11
+Section: NAA
+*/
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+In this workshop, I practiced the concept of derived classes and custom I/O operators. I have a base class named VehicleBasic which contain basic attributes like plate number, built year and address. Also, to reduce redundant code, I created a derived class named Dumper which contain each dumper's current load and max load. In addition to the hierarchy of these class, I also created shadow functions of input and output operators for them.
+In the VehicleBasic module, I have function ostream &write(ostream &os) const and istream &read(istream &in) to input and output the data. In the Dumper module, I also have similar functions like ostream& Dumper::write(ostream &os) const and istream& Dumper::read(istream &in), therefore, for the purpose of reduce code, I shadowed the two member functions in the base class (VehicleBasic) within the derived class member function (Dumper). I also do the similar thing to the operators helper functions. (operator<< and operator>>)

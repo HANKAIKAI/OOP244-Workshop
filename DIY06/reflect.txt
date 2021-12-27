@@ -1,0 +1,15 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.10.
+//==============================================
+// Worshop#6: (DIY) Classes and resources, IO operators
+// Version: 0.9
+//==============================================
+
+In this workshop, I learnt how to copy an object. There are two ways to copy an object. We can use a copy constructor or by using the operator =. In the process of copying, shallow and deep copies occur. However, the disadvantage of shallow copy is that if some variables are dynamically allocated memory from heap section, then copied object variable will also reference then same memory location.
+This will create ambiguity and run-time errors dangling pointer. So, I used deep copy in this workshop. 
+Firstly, the copy constructor receives a constant object by reference as a parameter such as Book(const Book& book). The value of the references received are copied to the current object using deep copy. Using copy is to check "self-assignment". Only if an object does not copy itself, the copy was carried out. The method using the operator "=" also receives a constant object by reference as a parameter. For instance, Book& operator=(const Book& book). The difference between them is that the operator has an object by reference as a return type. Unlike the copy constructor, I overwrote the value of the "this" object with the value of the operand object. I deleted the dynamic memory of the "this" object, reassigned the size of dynamic memory in the operand object, and copied it deeply. Finally, I returned “this” object. 

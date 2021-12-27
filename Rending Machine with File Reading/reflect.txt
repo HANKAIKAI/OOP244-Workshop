@@ -1,0 +1,31 @@
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.9.16
+//==============================================
+// Worshop#1: (DIY)Vending Machine with File Reading     
+//==============================================
+In this workshop, I learned that create organized code separated by modules have many advantages. 
+For example, modular programming helps develop programs that are much easier to read since they can be enabled as user-defined functions. 
+Also, a program module is capable of being reused in a program.
+
+A namespace is a solution created. Without using namespace, some developers working on the same projects would probably occur conflict, because of use the same identifier for different variables.
+
+When the code is compiled, the preprocesser checks whether SDDS_DRINKE_H has been previously defined. 
+The #ifndef and #endif guaranteed whatever programmer write between these two lines. 
+If this is the first time we have included the header, SDDS_DRINKE_H will not have been defined. 
+Therefore, the compiler defines SDDS_DRINKE_H and includes the contents of the file. 
+If the header is included again into the same file, it will not compiling, because of sdds is already been compiled.
+
+Add drink.h file and drink.cpp file together built a safe module. Because they are both implemented in namespace sdds. 
+They will merge into a bigger namespaces.
+
+In DIY portion, I defined a new function to replaced loadDrinks function called loadDrinksFromFile. 
+This function work on read drink.txt file. In the first line of code, file means “file pointer”. 
+For instance, when using the fopen function to open a file, a FILE pointer is returned. 
+FILE is a kind of structure that holds information about the file. 
+In the next line, use loop statement let us can begin actually reading through all these entries. 
+Fscanf function is used as read their name, their volume, their price and their quantity. 
+Finally, using the fclose function closes the file. When it closes the file, the function releases any buffer that the system reserved.

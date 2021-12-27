@@ -1,0 +1,20 @@
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.10.4
+//==============================================
+// Worshop#3: (DIY) Member Functions and Privacy 
+//==============================================
+
+In this workshop, I was able to learn how to handle objects in C++, an object-oriented language.
+When I executed my program, the compiler gave me an error. The prompts were not clear for understand, however, I used F10 for check line-by-line.
+Firstly, I wrote [if(ptr == null) cout << "error";] after opening the file for check whether it open successfully or not. Then, I found that the compiler didn't read the .csv file. Finally, I solved it with the copy of .csv file into my code folder.
+Also, I could use member functions of iostream with cout in this workshop. But I thought that using printf function is more intuitive than cout.
+I can instantiate one object using class. It can include variables and functions, which are called member variables and member functions. 
+In addition, I can specify their scope using private and public keywords. It is declared private by default, but if it is scoped to public, it can be accessed not only from within the class but also from outside. 
+In this workshop, I used the member functions as a query or modify method. A query function is a function that prevents the state of an object from changing with a role such as const. For example, void display() const. 
+However, the modify function can change the value of the member variable. For example, I can allocate the inputted value in a member variable, or I can make the member variable into an empty state. 
+When accessing a publicly declared member variable from the outside, you can access it by using "."
+

@@ -1,0 +1,13 @@
+//==============================================
+// Name:           Yuankai Han
+// Student Number: 154477194
+// Email:          yhan77@myseneca.ca
+// Section:        NAA
+// Date:           2021.10.
+//==============================================
+// Worshop#4: (DIY) Constructors, Destructors and Current object 
+// Version: 0.9
+//==============================================
+Through this workshop and class, I was able to learn how to approach and handle objects like object-oriented programming.
+Among the things I learned are the constructor and the destructor used during this workshop. The constructor is called automatically when the object is created. There are several ways to implement a constructor. First, the constructor has no return value, and it can be used by overloading the constructor. Moreover, I can create a constructor that takes the parameters and enters the value into a member variable, or I can set the default values and create a default constructor that enters the default values that I set as soon as the constructor is called.
+In this workshop, I overloaded the Book and Chapter object constructor into 2 cases. Therefore, the initialized value was different depending on the parameter you entered. In addition, the destructor is a function that is automatically called when an object that was created is destroyed. Destroy the constructor that was called and created. However, if there is an object that has a dynamic memory, it must be deleted before the constructor is destroyed. So that is why I used the destructor to delete a memory.
